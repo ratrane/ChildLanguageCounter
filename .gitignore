@@ -1,0 +1,23 @@
+# Godot project-specific
+.godot/
+.import/
+.export/
+.export_presets.cfg
+
+# Android build
+/android/
+
+# iOS build
+/ios/
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Optional: caches
+.cache/

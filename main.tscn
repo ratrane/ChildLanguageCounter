@@ -1,0 +1,120 @@
+[gd_scene format=3 uid="uid://b20xml8rno5js"]
+
+[ext_resource type="Script" uid="uid://dy66x0wij0v3j" path="res://main.gd" id="1_ig7tw"]
+
+[node name="Main (Control)" type="Control" unique_id=1475409117]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1153.0
+offset_bottom = 646.0
+script = ExtResource("1_ig7tw")
+
+[node name="NumberLabel" type="Label" parent="." unique_id=758840234]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -477.5
+offset_top = -161.5
+offset_right = 477.5
+offset_bottom = 161.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 100
+text = "?"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="PlaySoundButton" type="Button" parent="." unique_id=2091165640]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -121.0
+offset_top = -187.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "🔊"
+
+[node name="Answers" type="HBoxContainer" parent="." unique_id=2058471264]
+clip_contents = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -170.0
+offset_top = -100.0
+offset_right = 170.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Answer1" type="Button" parent="Answers" unique_id=1129361724]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "1
+"
+
+[node name="Answer2" type="Button" parent="Answers" unique_id=1623106434]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "2"
+
+[node name="Answer3" type="Button" parent="Answers" unique_id=1885697]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "3
+"
+
+[node name="ScoreLabel" type="Label" parent="." unique_id=971509299]
+layout_mode = 1
+offset_right = 71.0
+offset_bottom = 36.0
+text = "Score: 0"
+
+[node name="AudioPlayer" type="AudioStreamPlayer" parent="." unique_id=1704877670]
+
+[node name="NativeLanguageButton" type="OptionButton" parent="." unique_id=1285103353]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -206.0
+offset_right = -108.0
+offset_bottom = 39.0
+grow_horizontal = 0
+item_count = 2
+popup/item_0/text = "Русский"
+popup/item_0/id = 0
+popup/item_1/text = "English"
+popup/item_1/id = 1
+
+[node name="TargetLanguageButton" type="OptionButton" parent="." unique_id=287537017]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -98.0
+offset_bottom = 39.0
+grow_horizontal = 0
+item_count = 2
+popup/item_0/text = "Русский"
+popup/item_0/id = 0
+popup/item_1/text = "English"
+popup/item_1/id = 1
+
+[connection signal="pressed" from="PlaySoundButton" to="." method="_on_play_sound_button_pressed"]
+[connection signal="pressed" from="Answers/Answer1" to="." method="_on_answer_1_pressed"]
+[connection signal="pressed" from="Answers/Answer2" to="." method="_on_answer_2_pressed"]
+[connection signal="pressed" from="Answers/Answer3" to="." method="_on_answer_3_pressed"]
+[connection signal="item_selected" from="NativeLanguageButton" to="." method="_on_native_language_button_item_selected"]
+[connection signal="item_selected" from="TargetLanguageButton" to="." method="_on_target_language_button_item_selected"]
