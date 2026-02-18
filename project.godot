@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="ChildLanguageCounter"
+run/main_scene="uid://b20xml8rno5js"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.svg"
 
